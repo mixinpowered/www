@@ -1,0 +1,17 @@
+---
+import Head from '@components/Head.astro'
+import '@fontsource-variable/inter'
+
+interface Props {
+	title?: string
+}
+
+const { title = 'Mixin Powered' } = Astro.props
+---
+
+<html lang="en">
+	<Head {title} />
+	<body class="font-inter">
+		<slot />
+	</body>
+</html>

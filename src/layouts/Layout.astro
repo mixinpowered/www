@@ -1,17 +1,25 @@
 ---
+import Footer from '@components/Footer.astro'
 import Head from '@components/Head.astro'
+import Navbar from '@components/Navbar.astro'
 import '@fontsource-variable/inter'
 
 interface Props {
-	title?: string
+  title?: string
 }
 
 const { title = 'Mixin Powered' } = Astro.props
 ---
 
 <html lang="en">
-	<Head {title} />
-	<body class="font-inter">
-		<slot />
-	</body>
+  <Head {title} />
+  <body class="font-inter bg-primary text-grayt">
+    <div class="m-auto max-w-7xl">
+      <Navbar />
+      <main class="space-y-20">
+        <slot />
+      </main>
+    </div>
+    <Footer />
+  </body>
 </html>

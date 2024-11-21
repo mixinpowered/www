@@ -1,0 +1,22 @@
+---
+import Layout from '@layouts/Layout.astro'
+import Members from '@components/Members.astro'
+import Collaborators from '@components/Collaborators.astro'
+---
+
+<Layout title="Mixin ⎯ Team">
+  <div class="flex flex-col items-center text-center gap-10 py-20">
+    <div>
+      <h2 class="text-4xl font-bold text-grayp">Our talented mixins</h2>
+      <p>Meet the people behind Mixin</p>
+    </div>
+    <a
+      href="https://github.com/MixinPowered"
+      target="_blank"
+      set:html="Join the community"
+      class="px-4 py-2 text-white bg-indigo-500 rounded-full"
+    />
+  </div>
+  <Members />
+  <Collaborators />
+</Layout>

@@ -1,0 +1,28 @@
+---
+import { getOutsideCollaborators } from '@services/octokit'
+const collaborators = await getOutsideCollaborators()
+---
+
+<div class="flex flex-col gap-5">
+  {
+    collaborators.length > 0 && (
+      <>
+        <div>
+          <h3 class="text-xl font-semibold text-grayp">Collaborators</h3>
+          <p>Help us creating awesome software to appear in this list.</p>
+        </div>
+        <div class="flex items-center gap-1">
+          {collaborators.map(({ avatar, url }) => (
+            <a
+              href={url}
+              target="_blank"
+              class="flex flex-col items-center gap-2"
+            >
+              <img src={avatar} alt={url} class="w-14 h-auto rounded-full" />
+            </a>
+          ))}
+        </div>
+      </>
+    )
+  }
+</div>

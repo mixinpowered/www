@@ -1,0 +1,40 @@
+---
+import { Icon } from 'astro-icon/components'
+import { socials } from '@data/index'
+
+const links = ['team', 'posts']
+const path = Astro.url.pathname.split('/')[1]
+---
+
+<nav class="flex items-center justify-between py-10">
+  <div class="flex items-center gap-8">
+    <a href="/">Mixin Powered Logo</a>
+    <ul class="flex items-center gap-6">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link}
+              class={
+                path === link
+                  ? 'underline decoration-2 underline-offset-8'
+                  : null
+              }
+            >
+              {link}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <div class="flex items-center gap-5">
+    {
+      socials.map(({ href, icon }) => (
+        <a {href} target="_blank">
+          <Icon name={icon} class="size-5" />
+        </a>
+      ))
+    }
+  </div>
+</nav>

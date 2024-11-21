@@ -1,0 +1,19 @@
+---
+import { links } from '@data/index'
+---
+
+<footer class="flex items-center w-full bg-secondary mt-20 py-5">
+  <div class="mx-auto flex items-center justify-between max-w-7xl w-full">
+    <p>A MixinPowered website</p>
+    <ul class="flex items-center">
+      {
+        links.map((link, index) => (
+          <li class="text-blue-600 flex items-center">
+            <a href={link.href}>{link.text}</a>
+            {index < links.length - 1 && <span class="mx-2 text-xs">•</span>}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</footer>
